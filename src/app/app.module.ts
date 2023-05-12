@@ -10,7 +10,7 @@ import {
   MatSidenavModule,
   MatButtonModule,
   MatLineModule,
-  MatListModule, MatIconModule, MatInputModule
+  MatListModule, MatIconModule, MatInputModule, MatFormFieldModule
 } from '@angular/material';
 import {EmployeeMgtComponent} from './employee-mgt/employee-mgt.component';
 import {SkillMgtComponent} from './skill-mgt/skill-mgt.component';
@@ -41,7 +41,8 @@ import {FormsModule} from '@angular/forms';
     MatListModule,
     MatIconModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule
 
   ],
   providers: [],
