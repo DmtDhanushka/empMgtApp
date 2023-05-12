@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {EMPLOYEES} from './EMPLOYEES';
 
 export interface Tile {
   color: string;
@@ -6,6 +7,7 @@ export interface Tile {
   rows: number;
   text: string;
 }
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,5 +15,5 @@ export interface Tile {
 })
 export class AppComponent {
   title = 'empSystem';
-  shouldRun = true;
+  employees = EMPLOYEES;
 }
