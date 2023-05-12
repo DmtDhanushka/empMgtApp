@@ -1,37 +1,25 @@
-/*.example-container {*/
-/*  position: absolute;*/
-/*  top: 0;*/
-/*  bottom: 0;*/
-/*  left: 0;*/
-/*  right: 0;*/
-/*  background: #eee;*/
-/*}*/
-
-/*.side-nav{*/
-/*  width: 25%;*/
-/*}*/
-
-/*.example-fill-remaining-space {*/
-/*  !* This fills the remaining space, by using flexbox.*/
-/*     Every toolbar row uses a flexbox row layout. *!*/
-/*  flex: 1 1 auto;*/
-/*}*/
-
-/*.row1{*/
-/*  height: 100px;*/
-/*  background-color: wheat;*/
-/*}*/
-
-/*.yellow {*/
-/*  background-color: yellow;*/
-/*}*/
-
 .mat-toolbar {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
 div[style] {
   padding: 10px;
+}
+
+.content-box {
+  display: flex;
+  height: calc(100vh - 50px);
+  padding: 10px;
+}
+
+.nav-link-button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.nav-bar {
+  width: 20%;
+  background-color: #fff
 }

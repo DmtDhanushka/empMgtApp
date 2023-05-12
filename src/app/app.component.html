@@ -1,15 +1,18 @@
 <mat-toolbar color="primary" style="height: 50px">
-  <span>Title of App</span>
+  <span>EMP MGT</span>
 </mat-toolbar>
 
-<div style="display: flex; height: calc(100vh - 100px)">
+<div class="content-box">
   <!-- Navigation column -->
-  <div style="width: 20%; background-color: lightgray">
+  <div class="nav-bar">
     <!-- Navigation links -->
+    <a mat-stroked-button color="primary" class="nav-link-button" routerLink="/emps">Employees</a>
+    <a mat-stroked-button color="primary" class="nav-link-button" routerLink="/skills">Skills</a>
   </div>
 
   <!-- Content column -->
   <div style="flex: 1; background-color: white">
     <!-- Content -->
+    <router-outlet></router-outlet>
   </div>
 </div>
