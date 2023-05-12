@@ -18,6 +18,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {EmpItemComponent} from './emp-item/emp-item.component';
 import { UpdateEmpComponent } from './update-emp/update-emp.component';
 import { EmpProfileComponent } from './emp-profile/emp-profile.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { EmpProfileComponent } from './emp-profile/emp-profile.component';
     AppRoutingModule,
     MatListModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
 
   ],
   providers: [],
