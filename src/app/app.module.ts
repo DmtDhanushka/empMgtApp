@@ -10,7 +10,14 @@ import {
   MatSidenavModule,
   MatButtonModule,
   MatLineModule,
-  MatListModule, MatIconModule, MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule, MatChipsModule
+  MatListModule,
+  MatIconModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatChipsModule,
+  MatAutocompleteModule
 } from '@angular/material';
 import {EmployeeMgtComponent} from './employee-mgt/employee-mgt.component';
 import {SkillMgtComponent} from './skill-mgt/skill-mgt.component';
@@ -19,7 +26,8 @@ import {EmpItemComponent} from './emp-item/emp-item.component';
 import {UpdateEmpComponent} from './update-emp/update-emp.component';
 import {EmpProfileComponent} from './emp-profile/emp-profile.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { AddEmpComponent } from './add-emp/add-emp.component';
+import {AddEmpComponent} from './add-emp/add-emp.component';
+import {SkillChipsComponent} from './skill-chips/skill-chips.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +37,8 @@ import { AddEmpComponent } from './add-emp/add-emp.component';
     EmpItemComponent,
     UpdateEmpComponent,
     EmpProfileComponent,
-    AddEmpComponent
+    AddEmpComponent,
+    SkillChipsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +58,7 @@ import { AddEmpComponent } from './add-emp/add-emp.component';
     MatDatepickerModule,
     MatChipsModule,
     ReactiveFormsModule,
-
+    MatAutocompleteModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
