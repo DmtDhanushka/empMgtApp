@@ -23,3 +23,7 @@ div[style] {
   width: 20%;
   background-color: #fff
 }
+
+.selected {
+  color: navy;
+}

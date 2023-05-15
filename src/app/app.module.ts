@@ -10,15 +10,16 @@ import {
   MatSidenavModule,
   MatButtonModule,
   MatLineModule,
-  MatListModule, MatIconModule, MatInputModule, MatFormFieldModule
+  MatListModule, MatIconModule, MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule, MatChipsModule
 } from '@angular/material';
 import {EmployeeMgtComponent} from './employee-mgt/employee-mgt.component';
 import {SkillMgtComponent} from './skill-mgt/skill-mgt.component';
 import {AppRoutingModule} from './app-routing.module';
 import {EmpItemComponent} from './emp-item/emp-item.component';
-import { UpdateEmpComponent } from './update-emp/update-emp.component';
-import { EmpProfileComponent } from './emp-profile/emp-profile.component';
+import {UpdateEmpComponent} from './update-emp/update-emp.component';
+import {EmpProfileComponent} from './emp-profile/emp-profile.component';
 import {FormsModule} from '@angular/forms';
+import { AddEmpComponent } from './add-emp/add-emp.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {FormsModule} from '@angular/forms';
     SkillMgtComponent,
     EmpItemComponent,
     UpdateEmpComponent,
-    EmpProfileComponent
+    EmpProfileComponent,
+    AddEmpComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,10 @@ import {FormsModule} from '@angular/forms';
     MatIconModule,
     MatInputModule,
     FormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatChipsModule,
 
   ],
   providers: [],
