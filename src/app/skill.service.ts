@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {EMPLOYEES} from './EMPLOYEES';
 import {Skill} from './skill';
@@ -9,9 +9,11 @@ import {SKILLS} from './SKILLS';
 })
 export class SkillService {
 
-  constructor() { }
+  constructor() {
+  }
 
-  getEmployees(): Observable<Skill[]> {
+  getSkills(): Observable<Skill[]> {
     return of(SKILLS);
   }
+
 }
