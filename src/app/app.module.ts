@@ -18,7 +18,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {EmpItemComponent} from './emp-item/emp-item.component';
 import {UpdateEmpComponent} from './update-emp/update-emp.component';
 import {EmpProfileComponent} from './emp-profile/emp-profile.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AddEmpComponent } from './add-emp/add-emp.component';
 
 @NgModule({
@@ -48,6 +48,7 @@ import { AddEmpComponent } from './add-emp/add-emp.component';
     MatNativeDateModule,
     MatDatepickerModule,
     MatChipsModule,
+    ReactiveFormsModule,
 
   ],
   providers: [],
