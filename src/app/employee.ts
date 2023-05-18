@@ -1,7 +1,9 @@
+import {Skill} from './skill';
+
 export interface Employee {
-  id: number;
+  empId: number;
   name: string;
   email: string;
   dob: string;
-  skills: string[];
+  owningSkills: Skill[];
 }

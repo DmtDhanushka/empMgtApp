@@ -1,40 +1,86 @@
 import {Employee} from './employee';
 
-const EMPLOYEES: Employee[] = [{
-  id: 4,
-  name: 'Sarah Williams',
-  email: 'sarah.williams@example.com',
-  dob: '05/25/1985',
-  skills: ['Java', 'JavaScript', 'SQL']
-},
+const EMPLOYEES: Employee[] = [
   {
-    id: 5,
-    name: 'Michael Brown',
-    email: 'michael.brown@example.com',
-    dob: '08/12/1990',
-    skills: ['Python', 'Ruby', 'HTML/CSS']
+    empId: 7,
+    name: 'Patrick Almedha',
+    email: 'pal@gmail.com',
+    dob: '1999-03-12',
+    owningSkills: [
+      {
+        skillId: 5,
+        label: '.NETx     '
+      }
+    ]
   },
   {
-    id: 6,
-    name: 'Emily Davis',
-    email: 'emily.davis@example.com',
-    dob: '03/17/1993',
-    skills: ['JavaScript', 'React', 'Node.js']
+    empId: 8,
+    name: 'Sunil Gamage',
+    email: 'suG@yahoo.com',
+    dob: '1988-03-28',
+    owningSkills: [
+      {
+        skillId: 7,
+        label: 'Python    '
+      },
+      {
+        skillId: 8,
+        label: 'C++       '
+      }
+    ]
   },
   {
-    id: 7,
-    name: 'David Wilson',
-    email: 'david.wilson@example.com',
-    dob: '09/08/1988',
-    skills: ['C++', 'Python', 'Machine Learning']
+    empId: 2,
+    name: 'Mahinda Raja',
+    email: 'mr@gmail.com',
+    dob: '1977-04-22',
+    owningSkills: []
   },
   {
-    id: 8,
-    name: 'Jessica Thompson',
-    email: 'jessica.thompson@example.com',
-    dob: '12/01/1996',
-    skills: ['HTML/CSS', 'JavaScript', 'UI/UX']
-  }];
+    empId: 11,
+    name: 'Alex Noy',
+    email: 'alex@gmail.com',
+    dob: '2008-04-22',
+    owningSkills: [
+      {
+        skillId: 7,
+        label: 'Python    '
+      },
+      {
+        skillId: 8,
+        label: 'C++       '
+      }
+    ]
+  },
+  {
+    empId: 6,
+    name: 'John Doe Rothsten',
+    email: 'jdR@gmail.com',
+    dob: '1877-04-22',
+    owningSkills: [
+      {
+        skillId: 6,
+        label: 'Java      '
+      },
+      {
+        skillId: 5,
+        label: '.NETx     '
+      }
+    ]
+  },
+  {
+    empId: 4,
+    name: 'Bobby Singher',
+    email: 'bbs@gmail.com',
+    dob: '1967-04-22',
+    owningSkills: [
+      {
+        skillId: 8,
+        label: 'C++       '
+      }
+    ]
+  }
+];
 
 export {EMPLOYEES};
 

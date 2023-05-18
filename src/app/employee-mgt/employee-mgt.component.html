@@ -13,8 +13,8 @@
   <mat-nav-list>
     <mat-list-item *ngFor="let employee of employees">
       <!--   <app-emp-item [employee]="emp"></app-emp-item>-->
-      <a matLine routerLink="/emp/{{employee.id}}"> {{employee.name}}</a>
-      <a routerLink="/emp/update/{{employee.id}}" mat-icon-button>
+      <a matLine routerLink="/emp/{{employee.empId}}"> {{employee.name}}</a>
+      <a routerLink="/emp/update/{{employee.empId}}" mat-icon-button>
         <mat-icon>edit</mat-icon>
       </a>
       <button mat-icon-button (click)="deleteEmp(employee)">

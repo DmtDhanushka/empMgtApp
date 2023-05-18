@@ -31,6 +31,4 @@ export class EmpProfileComponent implements OnInit {
   goBack() {
     this.location.back();
   }
-
-  protected readonly undefined = undefined;
 }

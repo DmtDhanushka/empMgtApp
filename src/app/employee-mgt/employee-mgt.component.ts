@@ -29,12 +29,12 @@ export class EmployeeMgtComponent implements OnInit {
   }
 
   getInfo(emp: Employee): void {
-    alert(emp.id);
+    alert(emp.empId);
   }
 
   deleteEmp(emp: Employee): void {
     if (confirm('Are you sure?') === true) {
-      this.employees = this.employees.filter((e) => e.id !== emp.id);
+      this.employees = this.employees.filter((e) => e.id !== emp.empId);
     }
 
 

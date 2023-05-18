@@ -7,8 +7,8 @@
     <mat-list-item> Email: {{employee.email}} </mat-list-item>
     <mat-list-item> DOB: {{employee.dob}} </mat-list-item>
     <h3 class="skill-heading">Skills</h3>
-    <mat-chip-list style="display: inline-flex; white-space: nowrap" *ngFor="let skill of employee.skills">
-      <mat-chip class="horizontal-chip">{{skill}}</mat-chip>
+    <mat-chip-list style="display: inline-flex; white-space: nowrap" *ngFor="let skill of employee.owningSkills">
+      <mat-chip class="horizontal-chip">{{skill.label}}</mat-chip>
     </mat-chip-list>
 
 
