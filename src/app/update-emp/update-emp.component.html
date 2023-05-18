@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>{{employee.name}}</h2>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input [(ngModel)]="nameInput" name="empName" matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input [(ngModel)]="emailInput" name="empEmail" matInput placeholder="Email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="datepicker" placeholder="Select Date" [formControl]="dateControl">
+      <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <mat-datepicker #datepicker></mat-datepicker>
+    </mat-form-field>
+    <app-skill-chips [allSkills]="allSkills"></app-skill-chips>
+    <div>
+      <button mat-button mat-raised-button (click)="updateEmp()">Update Details</button>
+    </div>
+
+
+  </form>
+</div>
+
+

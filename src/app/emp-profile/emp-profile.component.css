@@ -1,0 +1,18 @@
+.container{
+  padding-left: 20px
+}
+
+.horizontal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Adjust the gap as per your preference */
+}
+
+.horizontal-chip {
+  white-space: nowrap;
+
+}
+
+.skill-heading {
+  margin: 10px 0;
+}

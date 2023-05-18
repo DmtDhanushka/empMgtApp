@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>{{employee.name}}</h2>
+
+
+  <mat-list>
+    <mat-list-item> Name: {{employee.name}} </mat-list-item>
+    <mat-list-item> Email: {{employee.email}} </mat-list-item>
+    <mat-list-item> DOB: {{employee.dob}} </mat-list-item>
+    <h3 class="skill-heading">Skills</h3>
+    <mat-chip-list style="display: inline-flex; white-space: nowrap" *ngFor="let skill of employee.skills">
+      <mat-chip class="horizontal-chip">{{skill}}</mat-chip>
+    </mat-chip-list>
+
+
+  </mat-list>
+
+  <button (click)="goBack()" mat-button mat-icon-button mat-raised-button style="margin-top:20px">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
+  </button>
+</div>
