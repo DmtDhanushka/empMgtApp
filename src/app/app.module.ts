@@ -28,6 +28,7 @@ import {EmpProfileComponent} from './emp-profile/emp-profile.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AddEmpComponent} from './add-emp/add-emp.component';
 import {SkillChipsComponent} from './skill-chips/skill-chips.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import {SkillChipsComponent} from './skill-chips/skill-chips.component';
     MatChipsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

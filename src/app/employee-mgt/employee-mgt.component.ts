@@ -19,13 +19,11 @@ export class EmployeeMgtComponent implements OnInit {
   private searchTerms = new Subject<string>();
 
   ngOnInit() {
-    console.log('oninit', this.employees);
     this.getEmployees();
-
   }
 
   getEmployees(): void {
-    this.empService.getEmployees().subscribe(employees => this.employees = employees);
+    this.empService.getEmployees().subscribe(e => this.employees = e);
   }
 
   getInfo(emp: Employee): void {
