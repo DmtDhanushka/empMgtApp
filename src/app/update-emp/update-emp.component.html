@@ -9,7 +9,8 @@
       <input [(ngModel)]="emailInput" name="empEmail" matInput placeholder="Email">
     </mat-form-field>
     <mat-form-field>
-      <input matInput name="datePick" [matDatepicker]="datepicker" placeholder="Select Date" [formControl]="dateControl">
+      <input matInput name="datePick" [matDatepicker]="datepicker" placeholder="Select Date"
+             [formControl]="dateControl">
       <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
       <mat-datepicker #datepicker></mat-datepicker>
     </mat-form-field>
@@ -23,7 +24,8 @@
       </mat-select>
     </mat-form-field>
     <div>
-      <button mat-button mat-raised-button (click)="updateEmp()">Update Details</button>
+      <button color="primary" mat-button mat-raised-button (click)="updateEmp()">Update Details</button>
+      <button mat-button mat-stroked-button style="margin-left: 10px" (click)="goBack()">Cancel</button>
     </div>
   </form>
 </div>

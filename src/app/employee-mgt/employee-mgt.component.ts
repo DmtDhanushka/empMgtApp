@@ -4,6 +4,7 @@ import {Employee} from '../employee';
 import {EMPLOYEES} from '../EMPLOYEES';
 import {Subject} from 'rxjs';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-employee-mgt',
@@ -12,7 +13,8 @@ import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 })
 export class EmployeeMgtComponent implements OnInit {
 
-  constructor(private empService: EmployeeService) {
+  constructor(private empService: EmployeeService,
+              private location: Location) {
   }
 
   employees = [];
@@ -45,7 +47,10 @@ export class EmployeeMgtComponent implements OnInit {
       );
     }
 
+  }
 
+  goBack() {
+    this.location.back();
   }
 
 
