@@ -32,7 +32,17 @@ export class EmployeeMgtComponent implements OnInit {
 
   deleteEmp(emp: Employee): void {
     if (confirm('Are you sure?') === true) {
-      this.employees = this.employees.filter((e) => e.id !== emp.empId);
+      this.empService.deleteEmployee(emp.empId).subscribe(
+        () => {
+          console.log('Employee deleted successfully');
+          location.reload();
+          // Handle success case here
+        },
+        (error) => {
+          console.log('Error deleting employee:', error);
+          // Handle error case here
+        }
+      );
     }
 
 

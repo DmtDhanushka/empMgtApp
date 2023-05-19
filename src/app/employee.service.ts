@@ -51,5 +51,10 @@ export class EmployeeService {
     return this.http.put(url, employee);
   }
 
+  deleteEmployee(id: number): Observable<any> {
+    const url = `http://localhost:8080/employee/delete/${id}`;
+    return this.http.delete(url);
+  }
+
 
 }
