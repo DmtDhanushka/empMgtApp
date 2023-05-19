@@ -21,8 +21,13 @@ export class UpdateEmpComponent implements OnInit {
   dobInput: string = undefined;
   dateControl = undefined;
   ownSkillsStr = [];
-  allSkillsLoaded = [];
+  allSkillsLoaded: Skill[] = [];
   allSkillsStr: string[] = [];
+
+  selectedSkills: Skill[] = [];
+  preSelectedSkills: Skill[] = [];
+
+  toppings = new FormControl([]);
 
   constructor(private route: ActivatedRoute,
               private empService: EmployeeService,
@@ -38,12 +43,20 @@ export class UpdateEmpComponent implements OnInit {
 
   getEmployee(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.employee = this.empService.getEmployee(id);
-    this.nameInput = this.employee.name;
-    this.emailInput = this.employee.email;
-    this.dobInput = this.employee.dob;
-    this.dateControl = new FormControl(new Date(this.employee.dob));
-    this.employee.owningSkills.forEach(skill => this.ownSkillsStr.push(skill.label));
+    this.empService.getEmployee(id).subscribe(e => {
+      this.employee = e[0];
+      console.log(this.employee);
+      this.nameInput = this.employee.name;
+      this.emailInput = this.employee.email;
+      this.dobInput = this.employee.dob;
+      this.dateControl = new FormControl(new Date(this.employee.dob));
+      // this.employee.owningSkills.forEach(skill => this.preSelectedSkills.push(skill));
+      // this.selectedSkills = this.employee.owningSkills;
+    });
+
+
+    // this.selectedSkills = this.employee.owningSkills;
+    // this.employee.owningSkills.forEach(skill => this.preSelectedSkills.push(skill));
   }
 
   goBack() {
@@ -56,6 +69,7 @@ export class UpdateEmpComponent implements OnInit {
     console.log(this.dateControl.value.toLocaleDateString('en-US'));
     this.employee.dob = this.dateControl.value.toLocaleDateString();
 
+    console.log(this.selectedSkills);
 
     // this.location.back();
   }
@@ -69,7 +83,7 @@ export class UpdateEmpComponent implements OnInit {
   private getAllSkills() {
     this.skillService.getAllSkills().subscribe(e => {
       this.allSkillsLoaded = e;
-      this.allSkillsLoaded.forEach(skill => this.allSkillsStr.push(skill.label));
+      // this.allSkillsLoaded.forEach(skill => this.allSkillsStr.push(skill.label));
     });
   }
 

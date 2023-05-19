@@ -39,10 +39,11 @@ export class EmployeeService {
   }
 
 
-  getEmployee(id: number): Employee {
-    const url = 'http://localhost:8080/employee/getEmployees';
+  getEmployee(id: number): Observable<Employee[]> {
+    const url = `http://localhost:8080/employee/${id}`;
+    return this.http.get<Employee[]>(url);
 
-    return EMPLOYEES.find((e) => e.empId === id);
+    // return EMPLOYEES.find((e) => e.empId === id);
   }
 
 }
