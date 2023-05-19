@@ -23,7 +23,6 @@ export class UpdateEmpComponent implements OnInit {
   ownSkillsStr = [];
   allSkillsLoaded = [];
   allSkillsStr: string[] = [];
-  selectedChips: MatChip[] = [];
 
   constructor(private route: ActivatedRoute,
               private empService: EmployeeService,
@@ -35,7 +34,6 @@ export class UpdateEmpComponent implements OnInit {
     this.getEmployee();
     this.getAllSkills();
   }
-
 
 
   getEmployee(): void {
@@ -58,6 +56,7 @@ export class UpdateEmpComponent implements OnInit {
     console.log(this.dateControl.value.toLocaleDateString('en-US'));
     this.employee.dob = this.dateControl.value.toLocaleDateString();
 
+
     // this.location.back();
   }
 
@@ -72,6 +71,12 @@ export class UpdateEmpComponent implements OnInit {
       this.allSkillsLoaded = e;
       this.allSkillsLoaded.forEach(skill => this.allSkillsStr.push(skill.label));
     });
+  }
+
+  receiveSelectedChipsData(selectedChips: string[]): void {
+    // Handle the received selected chips data
+    console.log('event', selectedChips);
+    // Update any necessary properties or perform any actions based on the received data
   }
 
 

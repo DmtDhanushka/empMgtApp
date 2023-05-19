@@ -13,7 +13,8 @@
       <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
       <mat-datepicker #datepicker></mat-datepicker>
     </mat-form-field>
-    <app-skill-chips [allSkills]="allSkillsStr" [currentSkills]="ownSkillsStr"></app-skill-chips>
+    <app-skill-chips [allSkills]="allSkillsStr" [currentSkills]="ownSkillsStr"
+                     (selectedChipsData)="receiveSelectedChipsData($event)"></app-skill-chips>
     <div>
       <button mat-button mat-raised-button (click)="updateEmp()">Update Details</button>
     </div>
