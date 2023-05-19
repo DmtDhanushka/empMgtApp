@@ -40,6 +40,8 @@ export class EmployeeService {
 
 
   getEmployee(id: number): Employee {
+    const url = 'http://localhost:8080/employee/getEmployees';
+
     return EMPLOYEES.find((e) => e.empId === id);
   }
 
