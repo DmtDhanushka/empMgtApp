@@ -46,4 +46,10 @@ export class EmployeeService {
     // return EMPLOYEES.find((e) => e.empId === id);
   }
 
+  updateEmployee(employee: Employee, id: number): Observable<any> {
+    const url = `http://localhost:8080/employee/update/${id}`;
+    return this.http.put(url, employee);
+  }
+
+
 }

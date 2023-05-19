@@ -67,11 +67,22 @@ export class UpdateEmpComponent implements OnInit {
     this.employee.name = this.nameInput;
     this.employee.email = this.emailInput;
     console.log(this.dateControl.value.toLocaleDateString('en-US'));
-    this.employee.dob = this.dateControl.value.toLocaleDateString();
+    this.employee.dob = this.convertDateFormat(this.dateControl.value.toLocaleDateString());
+    this.employee.owningSkills = this.selectedSkills;
 
-    console.log(this.selectedSkills);
+    console.log(JSON.stringify(this.employee));
 
-    // this.location.back();
+    this.empService.updateEmployee(this.employee, this.employee.empId).subscribe(
+      () => {
+        console.log('Employee updated successfully');
+        // Handle success case here
+      },
+      (error) => {
+        console.log('Error updating employee:', error);
+        // Handle error case here
+      }
+    );
+    this.location.back();
   }
 
   formatDateString(date: string): Date {
@@ -91,6 +102,19 @@ export class UpdateEmpComponent implements OnInit {
     // Handle the received selected chips data
     console.log('event', selectedChips);
     // Update any necessary properties or perform any actions based on the received data
+  }
+
+  convertDateFormat(dateString) {
+    const dobString = dateString;
+    const dobParts = dobString.split('/');
+    const day = dobParts[0];
+    const month = dobParts[1];
+    const year = dobParts[2];
+
+    const dob = new Date(`${year}-${month}-${day}`);
+
+    const convertedDob = dob.toISOString().split('T')[0];
+    return convertedDob;
   }
 
 
