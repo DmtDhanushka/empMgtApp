@@ -30,4 +30,10 @@ export class SkillService {
     // @ts-ignore
     return this.http.delete(url, id);
   }
+
+  updateSkill(skillId, skillObj: Skill) {
+    const url = `http://localhost:8080/skills/updateSkill/${skillId}`;
+    return this.http.put(url, skillObj);
+
+  }
 }

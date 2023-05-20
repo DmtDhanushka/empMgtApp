@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SkillService} from '../skill.service';
+import {Skill} from '../skill';
 
 @Component({
   selector: 'app-skill-mgt',
@@ -12,8 +13,9 @@ export class SkillMgtComponent implements OnInit {
   }
 
   skills = [];
-  newSillInput: string = undefined;
-  skill: string = undefined;
+  newSkillInput: string = undefined;
+  isSkillEditOpen: number = undefined;
+  updatedSkillLabel = undefined;
 
   ngOnInit() {
     this.getSkills();
@@ -24,13 +26,30 @@ export class SkillMgtComponent implements OnInit {
     this.skillService.getAllSkills().subscribe(e => this.skills = e);
   }
 
-  updateSkill(employee: any) {
+  updateSkill(emp: any) {
+    this.isSkillEditOpen = undefined;
+    console.log(this.updatedSkillLabel);
 
+    const skillObj: Skill = {skillId: emp.skillId, label: this.updatedSkillLabel};
+
+    if (confirm('Are you sure you want to update skill label?') === true) {
+      this.skillService.updateSkill(emp.skillId, skillObj).subscribe(
+        () => {
+          console.log('skill updated successfully');
+          // Handle success case here
+        },
+        (error) => {
+          console.log('Error ', error);
+          // Handle error case here
+        }
+      );
+      location.reload();
+    }
   }
 
   addSkill() {
-    console.log(this.newSillInput);
-    const skillObj = {label: this.newSillInput};
+    console.log(this.newSkillInput);
+    const skillObj = {label: this.newSkillInput};
 
     this.skillService.addSkill(skillObj).subscribe(
       () => {
@@ -60,4 +79,5 @@ export class SkillMgtComponent implements OnInit {
       location.reload();
     }
   }
+
 }
