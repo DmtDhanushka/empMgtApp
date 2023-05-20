@@ -22,4 +22,11 @@ export class SkillMgtComponent implements OnInit {
     this.skillService.getAllSkills().subscribe(e => this.skills = e);
   }
 
+  updateSkill(employee: any) {
+
+  }
+
+  deleteSkill(employee: any) {
+
+  }
 }

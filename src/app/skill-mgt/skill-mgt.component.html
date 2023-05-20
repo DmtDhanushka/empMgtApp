@@ -1,3 +1,24 @@
-<p>skill-mgt works!</p>
+<div class="container">
 
-<p *ngFor="let skill of skills">{{skill.label}}</p>
+  <button class="addBtn" mat-raised-button color="primary" routerLink="/addEmp" mat-button>
+    <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle</mat-icon>
+    <span style="margin-left: 6px">Add new</span>
+  </button>
+
+
+  <p *ngIf="skills.length!==1;else oneEmp">{{skills.length}} Skills found.</p>
+  <ng-template #oneEmp><p>1 Skill found.</p></ng-template>
+  <mat-divider style="margin-top: 20px"></mat-divider>
+
+  <mat-nav-list>
+    <mat-list-item *ngFor="let skill of skills">
+      <a matLine routerLink="/emp/{{skill.id}}"> {{skill.label}}</a>
+      <button mat-icon-button (click)="updateSkill(skill)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteSkill(skill)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-nav-list>
+</div>
