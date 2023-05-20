@@ -27,7 +27,7 @@ export class UpdateEmpComponent implements OnInit {
   selectedSkills: Skill[] = [];
   preSelectedSkills: Skill[] = [];
 
-  toppings = new FormControl([]);
+  skillFormControl = new FormControl([]);
 
   constructor(private route: ActivatedRoute,
               private empService: EmployeeService,
@@ -66,12 +66,8 @@ export class UpdateEmpComponent implements OnInit {
   updateEmp() {
     this.employee.name = this.nameInput;
     this.employee.email = this.emailInput;
-    console.log(this.dateControl.value.toLocaleDateString('en-US'));
     this.employee.dob = this.convertDateFormat(this.dateControl.value.toLocaleDateString());
     this.employee.owningSkills = this.selectedSkills;
-
-    console.log(JSON.stringify(this.employee));
-
     this.empService.updateEmployee(this.employee, this.employee.empId).subscribe(
       () => {
         console.log('Employee updated successfully');

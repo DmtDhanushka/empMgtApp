@@ -56,5 +56,8 @@ export class EmployeeService {
     return this.http.delete(url);
   }
 
-
+  addEmployee(employee: Employee) {
+    const url = `http://127.0.0.1:8080/employee/save`;
+    return this.http.post(url, employee);
+  }
 }

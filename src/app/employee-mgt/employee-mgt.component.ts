@@ -5,6 +5,7 @@ import {EMPLOYEES} from '../EMPLOYEES';
 import {Subject} from 'rxjs';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 import {Location} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-employee-mgt',
@@ -14,7 +15,8 @@ import {Location} from '@angular/common';
 export class EmployeeMgtComponent implements OnInit {
 
   constructor(private empService: EmployeeService,
-              private location: Location) {
+              private location: Location,
+              private router: Router) {
   }
 
   employees = [];
@@ -25,7 +27,12 @@ export class EmployeeMgtComponent implements OnInit {
   }
 
   getEmployees(): void {
-    this.empService.getEmployees().subscribe(e => this.employees = e);
+    this.empService.getEmployees().subscribe((emps) => {
+        this.employees = emps;
+      },
+      (error) => {
+        console.error('Error getting empoloyees list', error);
+      });
   }
 
   getInfo(emp: Employee): void {

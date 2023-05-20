@@ -1,1 +1,30 @@
-<p>add-emp works!</p>
+<div class="container">
+  <h2>Create a new employee</h2>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input [(ngModel)]="nameInput" name="empName" matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input [(ngModel)]="emailInput" name="empEmail" matInput placeholder="Email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="datePick" [matDatepicker]="datepicker" placeholder="Select Date"
+             [formControl]="dateControl">
+      <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <mat-datepicker #datepicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <mat-label>Skills</mat-label>
+      <mat-select [formControl]="skillFormControl" multiple [(value)]="selectedSkills">
+        <mat-option *ngFor="let skill of allSkillsLoaded" [value]="skill">{{skill.label}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div>
+      <button color="primary" mat-button mat-raised-button (click)="addEmp()">Create</button>
+      <button mat-button mat-stroked-button style="margin-left: 10px" (click)="goBack()">Cancel</button>
+    </div>
+  </form>
+</div>
+
+

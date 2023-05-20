@@ -19,7 +19,7 @@
     <!--    <app-skill-selector></app-skill-selector>-->
     <mat-form-field style="width: 100%">
       <mat-label>Skills</mat-label>
-      <mat-select [formControl]="toppings" multiple [(value)]="selectedSkills">
+      <mat-select [formControl]="skillFormControl" multiple [(value)]="selectedSkills">
         <mat-option *ngFor="let skill of allSkillsLoaded" [value]="skill">{{skill.label}}</mat-option>
       </mat-select>
     </mat-form-field>
