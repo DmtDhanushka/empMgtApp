@@ -17,7 +17,7 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatChipsModule,
-  MatAutocompleteModule, MatSelectModule
+  MatAutocompleteModule, MatSelectModule, MatSnackBarModule
 } from '@angular/material';
 import {EmployeeMgtComponent} from './employee-mgt/employee-mgt.component';
 import {SkillMgtComponent} from './skill-mgt/skill-mgt.component';
@@ -29,7 +29,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AddEmpComponent} from './add-emp/add-emp.component';
 import {SkillChipsComponent} from './skill-chips/skill-chips.component';
 import {HttpClientModule} from '@angular/common/http';
-import { SkillSelectorComponent } from './skill-selector/skill-selector.component';
+import {SkillSelectorComponent} from './skill-selector/skill-selector.component';
+import {InputErrorsExampleComponent} from './input-errors-example/input-errors-example.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SkillSelectorComponent } from './skill-selector/skill-selector.componen
     EmpProfileComponent,
     AddEmpComponent,
     SkillChipsComponent,
-    SkillSelectorComponent
+    SkillSelectorComponent,
+    InputErrorsExampleComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ import { SkillSelectorComponent } from './skill-selector/skill-selector.componen
     ReactiveFormsModule,
     MatAutocompleteModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
