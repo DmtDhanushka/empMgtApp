@@ -20,4 +20,14 @@ export class SkillService {
     return this.http.get<Skill[]>(url);
   }
 
+  addSkill(skillObj: { label: string }) {
+    const url = 'http://localhost:8080/skills/save';
+    return this.http.post(url, skillObj);
+  }
+
+  deleteSkill(id: number) {
+    const url = `http://localhost:8080/skills/delete/${id}`;
+    // @ts-ignore
+    return this.http.delete(url, id);
+  }
 }

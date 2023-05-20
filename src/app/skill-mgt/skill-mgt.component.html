@@ -1,15 +1,15 @@
 <div class="container">
   <div class="skill-header">
-    <button class="addBtn" mat-raised-button color="primary" mat-button>
+    <button (click)="addSkill()" class="addBtn" mat-raised-button color="primary" mat-button>
       <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle</mat-icon>
       <span style="margin-left: 6px">Add new</span>
     </button>
     <mat-form-field class="skill-label-input">
-      <input matInput placeholder="Skill" value="" maxlength="10">
+      <input matInput placeholder="Skill" value="" maxlength="10" [(ngModel)]="newSillInput">
     </mat-form-field>
-    <button mat-button mat-icon-button mat-raised-button style="margin-left: 20px;align-self: baseline">
-      <mat-icon aria-hidden="false" aria-label="Example home icon">check</mat-icon>
-    </button>
+    <!--    <button mat-button mat-icon-button mat-raised-button style="margin-left: 20px;align-self: baseline">-->
+    <!--      <mat-icon aria-hidden="false" aria-label="Example home icon">check</mat-icon>-->
+    <!--    </button>-->
   </div>
 
 
@@ -19,11 +19,11 @@
 
   <mat-nav-list>
     <mat-list-item *ngFor="let skill of skills">
-      <a matLine routerLink="/emp/{{skill.id}}"> {{skill.label}}</a>
+      <a matLine routerLink="/emp/{{skill.skillId}}"> {{skill.label}}</a>
       <button mat-icon-button (click)="updateSkill(skill)">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button (click)="deleteSkill(skill)">
+      <button mat-icon-button (click)="deleteSkill(skill.skillId)">
         <mat-icon>delete</mat-icon>
       </button>
     </mat-list-item>
