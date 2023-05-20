@@ -1,13 +1,20 @@
 <div class="container">
+  <div class="skill-header">
+    <button class="addBtn" mat-raised-button color="primary" mat-button>
+      <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle</mat-icon>
+      <span style="margin-left: 6px">Add new</span>
+    </button>
+    <mat-form-field class="skill-label-input">
+      <input matInput placeholder="Skill" value="" maxlength="10">
+    </mat-form-field>
+    <button mat-button mat-icon-button mat-raised-button style="margin-left: 20px;align-self: baseline">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">check</mat-icon>
+    </button>
+  </div>
 
-  <button class="addBtn" mat-raised-button color="primary" routerLink="/addEmp" mat-button>
-    <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle</mat-icon>
-    <span style="margin-left: 6px">Add new</span>
-  </button>
 
-
-  <p *ngIf="skills.length!==1;else oneEmp">{{skills.length}} Skills found.</p>
-  <ng-template #oneEmp><p>1 Skill found.</p></ng-template>
+  <p *ngIf="skills.length!==1;else oneEmp">Total {{skills.length}} skills.</p>
+  <ng-template #oneEmp><p>1 skill.</p></ng-template>
   <mat-divider style="margin-top: 20px"></mat-divider>
 
   <mat-nav-list>

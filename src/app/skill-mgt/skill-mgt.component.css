@@ -15,5 +15,16 @@
 
 .addBtn {
   margin-bottom: 20px;
+  align-self: center;
+}
+
+.skill-header {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.skill-label-input {
+  width: 150px;
+  margin-left: 20px;
 }
