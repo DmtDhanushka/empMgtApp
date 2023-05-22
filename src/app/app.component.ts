@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {EMPLOYEES} from './EMPLOYEES';
 
 export interface Tile {
   color: string;
@@ -18,5 +17,4 @@ type SelectedLink = 'emp' | 'skill';
 
 export class AppComponent {
   selectedLink: SelectedLink = 'emp';
-
 }

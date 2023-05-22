@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EmployeeService} from '../employee.service';
 import {Employee} from '../employee';
-import {EMPLOYEES} from '../EMPLOYEES';
 import {Subject} from 'rxjs';
-import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
 
@@ -14,13 +12,13 @@ import {Router} from '@angular/router';
 })
 export class EmployeeMgtComponent implements OnInit {
 
+  employees = [];
+  private searchTerms = new Subject<string>();
+
   constructor(private empService: EmployeeService,
               private location: Location,
               private router: Router) {
   }
-
-  employees = [];
-  private searchTerms = new Subject<string>();
 
   ngOnInit() {
     this.getEmployees();

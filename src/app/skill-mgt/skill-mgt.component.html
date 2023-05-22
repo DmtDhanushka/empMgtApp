@@ -1,17 +1,13 @@
 <div class="container">
   <div class="skill-header">
-    <button (click)="addSkill()" class="addBtn" mat-raised-button color="primary" mat-button>
+    <button (click)="addSkill()" class="addBtn" color="primary" mat-button mat-raised-button>
       <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle</mat-icon>
       <span style="margin-left: 6px">Add new</span>
     </button>
     <mat-form-field class="skill-label-input">
-      <input matInput placeholder="Skill" value="" maxlength="10" [(ngModel)]="newSkillInput">
+      <input [(ngModel)]="newSkillInput" matInput maxlength="10" placeholder="Skill" value="">
     </mat-form-field>
-    <!--    <button mat-button mat-icon-button mat-raised-button style="margin-left: 20px;align-self: baseline">-->
-    <!--      <mat-icon aria-hidden="false" aria-label="Example home icon">check</mat-icon>-->
-    <!--    </button>-->
   </div>
-
 
   <p *ngIf="skills.length!==1;else oneEmp">Total {{skills.length}} skills.</p>
   <ng-template #oneEmp><p>1 skill.</p></ng-template>
@@ -21,20 +17,20 @@
     <mat-list-item *ngFor="let skill of skills">
       <a matLine> {{skill.label}}</a>
       <mat-form-field *ngIf="isSkillEditOpen===skill.skillId" class="skill-label-input">
-        <input matInput value="11" maxlength="10" [(ngModel)]="updatedSkillLabel">
+        <input [(ngModel)]="updatedSkillLabel" matInput maxlength="10" value="11">
       </mat-form-field>
-      <button mat-icon-button *ngIf="isSkillEditOpen !== skill.skillId"
-              (click)="isSkillEditOpen = skill.skillId; updatedSkillLabel=skill.label">
+      <button (click)="isSkillEditOpen = skill.skillId; updatedSkillLabel=skill.label" *ngIf="isSkillEditOpen !== skill.skillId"
+              mat-icon-button>
         <mat-icon>edit</mat-icon>
       </button>
-      <button *ngIf="isSkillEditOpen===skill.skillId" mat-icon-button (click)="updateSkill(skill)">
+      <button (click)="updateSkill(skill)" *ngIf="isSkillEditOpen===skill.skillId" mat-icon-button>
         <mat-icon>check</mat-icon>
       </button>
-      <button *ngIf="isSkillEditOpen===skill.skillId" mat-icon-button (click)="isSkillEditOpen = undefined">
+      <button (click)="isSkillEditOpen = undefined" *ngIf="isSkillEditOpen===skill.skillId" mat-icon-button>
         <mat-icon>close</mat-icon>
       </button>
 
-      <button mat-icon-button (click)="deleteSkill(skill.skillId)" *ngIf="isSkillEditOpen !== skill.skillId">
+      <button (click)="deleteSkill(skill.skillId)" *ngIf="isSkillEditOpen !== skill.skillId" mat-icon-button>
         <mat-icon style="color: red">delete</mat-icon>
       </button>
     </mat-list-item>

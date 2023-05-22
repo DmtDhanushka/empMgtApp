@@ -93,8 +93,6 @@ export class AddEmpComponent implements OnInit {
     }
 
     this.employee.dob = this.convertDateFormat(this.dateControl.value.toLocaleDateString());
-    // this.employee.name = this.nameInput;
-    // this.employee.email = this.emailInput;
     this.employee.name = this.nameFormControl.value;
     this.employee.email = this.emailFormControl.value;
     this.employee.owningSkills = this.selectedSkills;
@@ -115,13 +113,6 @@ export class AddEmpComponent implements OnInit {
     this.location.back();
   }
 
-  private getAllSkills() {
-    this.skillService.getAllSkills().subscribe(e => {
-      this.allSkillsLoaded = e;
-      // this.allSkillsLoaded.forEach(skill => this.allSkillsStr.push(skill.label));
-    });
-  }
-
   formatDateString(date: string): Date {
     const [month, day, year] = date.split('/');
     return new Date(+year, +month - 1, +day);
@@ -138,5 +129,11 @@ export class AddEmpComponent implements OnInit {
 
     const convertedDob = dob.toISOString().split('T')[0];
     return convertedDob;
+  }
+
+  private getAllSkills() {
+    this.skillService.getAllSkills().subscribe(e => {
+      this.allSkillsLoaded = e;
+    });
   }
 }

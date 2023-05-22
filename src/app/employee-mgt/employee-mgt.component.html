@@ -1,6 +1,6 @@
 <div class="container">
 
-  <button class="addBtn" mat-raised-button color="primary" routerLink="/addEmp" mat-button>
+  <button class="addBtn" color="primary" mat-button mat-raised-button routerLink="/addEmp">
     <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle</mat-icon>
     <span style="margin-left: 6px">Add new</span>
   </button>
@@ -12,12 +12,11 @@
 
   <mat-nav-list>
     <mat-list-item *ngFor="let employee of employees">
-      <!--   <app-emp-item [employee]="emp"></app-emp-item>-->
       <a matLine routerLink="/emp/{{employee.empId}}"> {{employee.name}}</a>
-      <a routerLink="/emp/update/{{employee.empId}}" mat-icon-button>
+      <a mat-icon-button routerLink="/emp/update/{{employee.empId}}">
         <mat-icon>edit</mat-icon>
       </a>
-      <button mat-icon-button (click)="deleteEmp(employee)">
+      <button (click)="deleteEmp(employee)" mat-icon-button>
         <mat-icon style="color: red">delete</mat-icon>
       </button>
     </mat-list-item>

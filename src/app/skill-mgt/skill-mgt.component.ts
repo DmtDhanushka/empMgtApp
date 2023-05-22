@@ -9,13 +9,13 @@ import {Skill} from '../skill';
 })
 export class SkillMgtComponent implements OnInit {
 
-  constructor(private skillService: SkillService) {
-  }
-
   skills = [];
   newSkillInput: string = undefined;
   isSkillEditOpen: number = undefined;
   updatedSkillLabel = undefined;
+
+  constructor(private skillService: SkillService) {
+  }
 
   ngOnInit() {
     this.getSkills();

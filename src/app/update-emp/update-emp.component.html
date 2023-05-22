@@ -3,29 +3,30 @@
 
   <form class="example-form">
     <mat-form-field class="example-full-width">
-      <input [(ngModel)]="nameInput" name="empName" matInput placeholder="Name">
+      <input [(ngModel)]="nameInput" matInput name="empName" placeholder="Name">
     </mat-form-field>
+
     <mat-form-field class="example-full-width">
-      <input [(ngModel)]="emailInput" name="empEmail" matInput placeholder="Email">
+      <input [(ngModel)]="emailInput" matInput name="empEmail" placeholder="Email">
     </mat-form-field>
+
     <mat-form-field>
-      <input matInput name="datePick" [matDatepicker]="datepicker" placeholder="Select Date"
-             [formControl]="dateControl">
-      <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <input [formControl]="dateControl" [matDatepicker]="datepicker" matInput name="datePick"
+             placeholder="Select Date">
+      <mat-datepicker-toggle [for]="datepicker" matSuffix></mat-datepicker-toggle>
       <mat-datepicker #datepicker></mat-datepicker>
     </mat-form-field>
-    <!--    <app-skill-chips [allSkills]="allSkillsStr" [currentSkills]="ownSkillsStr"-->
-    <!--                     (selectedChipsData)="receiveSelectedChipsData($event)"></app-skill-chips>-->
-    <!--    <app-skill-selector></app-skill-selector>-->
+
     <mat-form-field style="width: 100%">
       <mat-label>Skills</mat-label>
-      <mat-select [formControl]="skillFormControl" multiple [(value)]="selectedSkills">
+      <mat-select [(value)]="selectedSkills" [formControl]="skillFormControl" multiple>
         <mat-option *ngFor="let skill of allSkillsLoaded" [value]="skill">{{skill.label}}</mat-option>
       </mat-select>
     </mat-form-field>
+
     <div>
-      <button color="primary" mat-button mat-raised-button (click)="updateEmp()">Update Details</button>
-      <button mat-button mat-stroked-button style="margin-left: 10px" (click)="goBack()">Cancel</button>
+      <button (click)="updateEmp()" color="primary" mat-button mat-raised-button>Update Details</button>
+      <button (click)="goBack()" mat-button mat-stroked-button style="margin-left: 10px">Cancel</button>
     </div>
   </form>
 </div>

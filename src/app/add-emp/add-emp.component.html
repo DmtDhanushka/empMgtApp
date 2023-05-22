@@ -2,15 +2,8 @@
   <h2>Create a new employee</h2>
 
   <form class="example-form">
-    <!--    <mat-form-field class="example-full-width">-->
-    <!--      <input [(ngModel)]="nameInput" name="empName" matInput placeholder="Name">-->
-    <!--    </mat-form-field>-->
-    <!--    <mat-form-field class="example-full-width">-->
-    <!--      <input [(ngModel)]="emailInput" name="empEmail" matInput placeholder="Email">-->
-    <!--    </mat-form-field>-->
-
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Name" [formControl]="nameFormControl">
+      <input [formControl]="nameFormControl" matInput placeholder="Name">
       <mat-error *ngIf="!nameFormControl.hasError('required')">
         Please enter a name
       </mat-error>
@@ -20,7 +13,7 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Email" [formControl]="emailFormControl">
+      <input [formControl]="emailFormControl" matInput placeholder="Email">
       <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
         Please enter a valid email address
       </mat-error>
@@ -30,22 +23,22 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput name="datePick" [matDatepicker]="datepicker" placeholder="Select Date"
-             [formControl]="dateControl">
-      <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <input [formControl]="dateControl" [matDatepicker]="datepicker" matInput name="datePick"
+             placeholder="Select Date">
+      <mat-datepicker-toggle [for]="datepicker" matSuffix></mat-datepicker-toggle>
       <mat-datepicker #datepicker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field style="width: 100%">
       <mat-label>Skills</mat-label>
-      <mat-select [formControl]="skillFormControl" multiple [(value)]="selectedSkills">
+      <mat-select [(value)]="selectedSkills" [formControl]="skillFormControl" multiple>
         <mat-option *ngFor="let skill of allSkillsLoaded" [value]="skill">{{skill.label}}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <div>
-      <button color="primary" mat-button mat-raised-button (click)="addEmp()">Create</button>
-      <button mat-button mat-stroked-button style="margin-left: 10px" (click)="goBack()">Cancel</button>
+      <button (click)="addEmp()" color="primary" mat-button mat-raised-button>Create</button>
+      <button (click)="goBack()" mat-button mat-stroked-button style="margin-left: 10px">Cancel</button>
     </div>
   </form>
 </div>
