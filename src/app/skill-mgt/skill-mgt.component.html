@@ -34,8 +34,8 @@
         <mat-icon>close</mat-icon>
       </button>
 
-      <button mat-icon-button (click)="deleteSkill(skill.skillId)">
-        <mat-icon>delete</mat-icon>
+      <button mat-icon-button (click)="deleteSkill(skill.skillId)" *ngIf="isSkillEditOpen !== skill.skillId">
+        <mat-icon style="color: red">delete</mat-icon>
       </button>
     </mat-list-item>
   </mat-nav-list>

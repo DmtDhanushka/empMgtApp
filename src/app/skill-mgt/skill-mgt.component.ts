@@ -79,5 +79,4 @@ export class SkillMgtComponent implements OnInit {
       location.reload();
     }
   }
-
 }

@@ -1,13 +1,15 @@
 <mat-toolbar color="primary" style="height: 50px">
-  <span>EMP MGT</span>
+  <span>Employee Management</span>
 </mat-toolbar>
 
 <div class="content-box">
   <!-- Navigation column -->
   <div class="nav-bar">
     <!-- Navigation links -->
-    <a mat-stroked-button color="primary" class="nav-link-button" routerLink="/emps">Employees</a>
-    <a mat-stroked-button color="primary" class="nav-link-button" routerLink="/skills">Skills</a>
+    <a mat-stroked-button [ngClass]="{selected:selectedLink==='emp'}" (click)="selectedLink='emp'" color="primary"
+       class="nav-link-button" routerLink="/emps">Employees</a>
+    <a mat-stroked-button [ngClass]="{selected:selectedLink==='skill'}" (click)="selectedLink='skill'" color="primary"
+       class="nav-link-button" routerLink="/skills">Skills</a>
   </div>
 
   <!-- Content column -->
